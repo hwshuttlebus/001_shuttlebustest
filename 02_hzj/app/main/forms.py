@@ -45,3 +45,8 @@ class EditProfileAdminForm(Form):
         if field.data != self.user.username and \
             User.query.filter_by(username=field.data).first():
             raise ValueError('Username already in use.')
+
+class PostForm(Form):
+    body = TextAreaField("请填写对班车系统/服务相关的投诉或者建议？", validators=[Required()])
+    submit = SubmitField('Submit')
+
