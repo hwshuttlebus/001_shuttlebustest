@@ -4,10 +4,8 @@ from .forms import LoginForm, RegisterForm
 from flask_login import login_required, login_user, logout_user
 from ..models import User, Role
 from .. import db
-from ..email import send_email
 from flask_login import current_user
 from ..email import send_email_cloud
-
 
 @auth.before_app_request
 def before_request():
