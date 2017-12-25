@@ -20,7 +20,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Flasky</a>
+            <a class="navbar-brand" href="/">Honeywell</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -31,6 +31,9 @@
                         Profile
                     </a>
                 </li>
+                {% endif %}
+                {% if current_user.can(Permission.MODERATE_COMMENTS) %}
+                <li><a href="{{ url_for('main.moderate') }}">Moderate Comments</a></li>
                 {% endif %}
             </ul>
             <ul class="nav navbar-nav navbar-right">

@@ -51,4 +51,6 @@ class PostForm(Form):
     body = PageDownField("请填写对班车系统/服务相关的投诉或者建议？", validators=[Required()])
     submit = SubmitField('Submit')
 
-
+class CommentForm(Form):
+    body = StringField('', validators=[Required()])
+    submit = SubmitField('Submit')

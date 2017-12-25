@@ -28,6 +28,12 @@
                 <a href="{{ url_for('.edit', id=post.id) }}">
                     <span class="label label-danger">Edit [Admin]</span>
                 </a>
+
+                <a href="{{ url_for('.post', id=post.id) }}#Comments">
+                    <span class="label label-primary">
+                        {{ post.comments.count() }} Comments
+                    </span>
+                </a>
                 {% endif %}
             </div>
         </div>
